@@ -49,12 +49,9 @@ export function SectionHeading({
   );
 }
 
-const CHECKOUT_URL =
-  "https://alunos.futebolinterativo.com/pay/base-fi-construindo-carreira-no-futebol";
-
 export function CTAButton({
   children,
-  href = CHECKOUT_URL,
+  href = "#oferta",
   variant = "solid",
   className = "",
 }: {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { Container, Eyebrow } from "./ui";
+import { Reveal } from "./Reveal";
 
 const bullets = [
   "Linguagem técnica do mercado do futebol",
@@ -12,7 +13,7 @@ export function TransformationSection() {
   return (
     <section className="bg-ink py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-2">
-        <div className="relative mx-auto w-full max-w-sm">
+        <Reveal className="relative mx-auto w-full max-w-sm">
           <div className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-cyan/10 blur-[80px]" />
           <Image
             src="/images/instructor.png"
@@ -21,9 +22,9 @@ export function TransformationSection() {
             height={558}
             className="w-full rounded-3xl"
           />
-        </div>
+        </Reveal>
 
-        <div className="flex flex-col items-start gap-5">
+        <Reveal className="flex flex-col items-start gap-5">
           <Eyebrow>O que muda na sua carreira</Eyebrow>
           <h2 className="font-display text-balance text-3xl font-extrabold leading-[1.15] tracking-tight text-ivory sm:text-4xl">
             Do zero ao primeiro passo dentro do futebol
@@ -43,7 +44,7 @@ export function TransformationSection() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

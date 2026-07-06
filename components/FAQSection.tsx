@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Container, SectionHeading } from "./ui";
+import { Reveal } from "./Reveal";
 
 const faqs = [
   {
@@ -35,41 +36,43 @@ export function FAQSection() {
   return (
     <section className="bg-ink-soft py-20">
       <Container className="max-w-3xl">
-        <SectionHeading eyebrow="Dúvidas frequentes" title="Perguntas frequentes" />
+        <Reveal>
+          <SectionHeading eyebrow="Dúvidas frequentes" title="Perguntas frequentes" />
 
-        <div className="mt-10 divide-y divide-white/5 border-t border-white/5">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div key={faq.question}>
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
-                >
-                  <span className="font-display text-base font-bold text-ivory">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-cyan transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
+          <div className="mt-10 divide-y divide-white/5 border-t border-white/5">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div key={faq.question}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                  >
+                    <span className="font-display text-base font-bold text-ivory">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 shrink-0 text-cyan transition-transform duration-200 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`grid overflow-hidden transition-all duration-200 ${
+                      isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
                     }`}
-                  />
-                </button>
-                <div
-                  className={`grid overflow-hidden transition-all duration-200 ${
-                    isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <p className="overflow-hidden text-sm leading-relaxed text-mist">
-                    {faq.answer}
-                  </p>
+                  >
+                    <p className="overflow-hidden text-sm leading-relaxed text-mist">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

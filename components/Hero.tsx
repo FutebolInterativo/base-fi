@@ -3,7 +3,7 @@ import { Container, Eyebrow, CTAButton } from "./ui";
 
 export function Hero() {
   return (
-    <section id="topo" className="grain relative overflow-hidden pb-20 pt-10 sm:pt-14">
+    <section id="topo" className="relative overflow-hidden pb-20 pt-10 sm:pt-14">
       <div className="pointer-events-none absolute left-1/2 top-[-14rem] -z-10 h-[40rem] w-[50rem] -translate-x-1/2 rounded-full bg-blue/25 blur-[140px]" />
       <div className="pointer-events-none absolute right-[8%] top-[6rem] -z-10 h-72 w-72 rounded-full bg-cyan/15 blur-[110px]" />
 

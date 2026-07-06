@@ -10,7 +10,7 @@ export function FinalCTASection() {
         </h2>
         <p className="mt-3 text-base text-white/85">Garanta seu acesso agora por R$297.</p>
         <a
-          href="https://alunos.futebolinterativo.com/pay/base-fi-construindo-carreira-no-futebol"
+          href="#oferta"
           className="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-ink shadow-md shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/25"
         >
           Quero garantir minha vaga

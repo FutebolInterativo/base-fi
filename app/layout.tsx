@@ -31,6 +31,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#060A14] text-white">
+        <div className="grain-fixed" aria-hidden="true" />
         {children}
       </body>
     </html>

@@ -18,9 +18,10 @@ export function InstructorSection() {
             George Klinger
           </h2>
           <p className="text-base leading-relaxed text-mist">
-            CEO do Futebol Interativo e mestre em psicologia do esporte. Já impactou mais de
-            4.500 alunos ao longo dos 8 anos de história do FI, aplicando uma metodologia
-            única de ensino — Teoria, Prática e Networking.
+            CEO do Futebol Interativo e mestre em psicologia do esporte. Há 8 anos aplicando a
+            metodologia que já formou mais de 25 mil alunos:{" "}
+            <span className="font-semibold text-ivory">Teoria, Prática e Networking</span> — a
+            mesma que conecta alunos a mais de 120 clubes parceiros.
           </p>
           <div className="mt-2 flex flex-wrap gap-8">
             {stats.map(({ value, label }) => (

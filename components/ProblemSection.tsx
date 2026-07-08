@@ -1,5 +1,5 @@
 import { Users, FileQuestion, Clock } from "lucide-react";
-import { Container, Eyebrow, SectionHeading } from "./ui";
+import { Container, SectionHeading } from "./ui";
 import { Reveal } from "./Reveal";
 
 const pains = [
@@ -7,7 +7,7 @@ const pains = [
     icon: Users,
     title: "Sem rede de contatos",
     description:
-      "Você não conhece ninguém dentro de um clube ou empresa do setor e não sabe por onde começar.",
+      "Você não conhece ninguém dentro de um clube ou empresa do setor — e vê vaga boa ir pra quem \"conhece alguém\".",
   },
   {
     icon: FileQuestion,
@@ -25,10 +25,14 @@ const pains = [
 
 export function ProblemSection() {
   return (
-    <section className="relative border-t border-white/5 bg-ink-soft py-20">
+    <section className="relative overflow-hidden border-t border-white/5 bg-ink-soft py-20">
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-64 w-[40rem] -translate-x-1/2 rounded-full bg-blue/10 blur-[120px]" />
       <Container>
         <Reveal>
-          <SectionHeading title="O mercado do futebol parece fechado para quem está de fora" />
+          <SectionHeading
+            title="O mercado do futebol parece fechado para quem está de fora"
+            description="Se você já sentiu isso, não é impressão. Mas existe um caminho estruturado pra entrar."
+          />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {pains.map(({ icon: Icon, title, description }) => (
@@ -41,10 +45,6 @@ export function ProblemSection() {
                 <p className="mt-2 text-sm leading-relaxed text-mist">{description}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-10 flex justify-center">
-            <Eyebrow>Você se identifica?</Eyebrow>
           </div>
         </Reveal>
       </Container>

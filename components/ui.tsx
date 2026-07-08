@@ -1,5 +1,8 @@
 import { ReactNode } from "react";
 
+export const CHECKOUT_URL =
+  "https://alunos.futebolinterativo.com/pay/base-fi-construindo-carreira-no-futebol";
+
 export function Container({
   children,
   className = "",
@@ -61,7 +64,7 @@ export function CTAButton({
   className?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-sm font-bold uppercase tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan";
+    "inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-extrabold uppercase tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan";
   const solid =
     "bg-gradient-to-b from-blue to-blue-deep text-white shadow-md shadow-blue-deep/40 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-deep/50";
   const outline =

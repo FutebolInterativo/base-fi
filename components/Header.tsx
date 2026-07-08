@@ -8,9 +8,7 @@ export function Header() {
         <a href="#topo" aria-label="Base FI">
           <Image src="/images/logo.png" alt="Base FI" width={116} height={46} priority />
         </a>
-        <CTAButton className="!px-5 !py-2.5 !text-xs">
-          Quero me inscrever
-        </CTAButton>
+        <CTAButton className="!px-5 !py-2.5 !text-xs">Quero me inscrever</CTAButton>
       </Container>
     </header>
   );

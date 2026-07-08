@@ -7,26 +7,36 @@ import { Reveal } from "./Reveal";
 
 const faqs = [
   {
-    question: "Preciso ter experiência no futebol para fazer o curso?",
+    question: "Preciso já trabalhar com futebol pra fazer a formação?",
     answer:
-      "Não. O curso foi desenhado para quem está começando do zero e também para quem já atua e quer se especializar.",
-  },
-  {
-    question: "O curso é ao vivo ou gravado?",
-    answer:
-      "O conteúdo é 100% gravado, com acesso imediato, para você estudar no seu próprio ritmo.",
+      "Não. A formação foi desenhada pra quem está começando do zero ou migrando de outra área. O módulo 1 é justamente um diagnóstico do seu perfil.",
   },
   {
     question: "Por quanto tempo tenho acesso?",
-    answer: "O acesso é vitalício, incluindo futuras atualizações do conteúdo.",
+    answer: "Acesso vitalício, incluindo atualizações futuras do conteúdo. Você estuda no seu ritmo.",
   },
   {
-    question: "Recebo certificado?",
-    answer: "Sim, certificado de conclusão é emitido automaticamente ao final do curso.",
+    question: "O certificado é reconhecido?",
+    answer:
+      "Você recebe o certificado de conclusão do Futebol Interativo, empresa com 8 anos de mercado e mais de 120 clubes parceiros — um ativo real pro seu currículo e LinkedIn.",
   },
   {
-    question: "E se eu não gostar do curso?",
-    answer: "Você tem 7 dias de garantia incondicional, com devolução total do valor pago.",
+    question: "As aulas são ao vivo ou gravadas?",
+    answer:
+      "As aulas são gravadas e liberadas imediatamente após a compra, pra você assistir quando e onde quiser. A comunidade no WhatsApp é o espaço vivo de networking e dúvidas.",
+  },
+  {
+    question: "Em quanto tempo consigo uma vaga no futebol?",
+    answer:
+      "Sendo transparente: ninguém sério pode garantir emprego — e quem promete isso está mentindo. O que garantimos é o método, o conhecimento e o networking que encurtam esse caminho. A velocidade depende da sua dedicação.",
+  },
+  {
+    question: "Posso parcelar?",
+    answer: "Sim — em até 12x de R$24,75 sem juros no cartão de crédito. Também aceitamos Pix à vista.",
+  },
+  {
+    question: "E se eu não gostar?",
+    answer: "Você tem 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor.",
   },
 ];
 
@@ -34,21 +44,31 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-ink-soft py-20">
+    <section className="relative overflow-hidden bg-ink-soft py-20">
+      <div className="pointer-events-none absolute left-1/2 bottom-0 -z-10 h-64 w-[40rem] -translate-x-1/2 rounded-full bg-blue/10 blur-[120px]" />
       <Container className="max-w-3xl">
         <Reveal>
-          <SectionHeading eyebrow="Dúvidas frequentes" title="Perguntas frequentes" />
+          <SectionHeading
+            eyebrow="Dúvidas frequentes"
+            title="Perguntas frequentes"
+            description="Tudo que você precisa saber antes de começar."
+          />
 
-          <div className="mt-10 divide-y divide-white/5 border-t border-white/5">
+          <div className="mt-10 flex flex-col gap-3">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
-                <div key={faq.question}>
+                <div
+                  key={faq.question}
+                  className={`glass-panel rounded-xl transition-colors duration-300 ${
+                    isOpen ? "border-cyan/25" : ""
+                  }`}
+                >
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
                     <span className="font-display text-base font-bold text-ivory">
                       {faq.question}
@@ -64,7 +84,7 @@ export function FAQSection() {
                       isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
                     }`}
                   >
-                    <p className="overflow-hidden text-sm leading-relaxed text-mist">
+                    <p className="overflow-hidden px-6 text-sm leading-relaxed text-mist">
                       {faq.answer}
                     </p>
                   </div>
